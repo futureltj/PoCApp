@@ -1,0 +1,259 @@
+<style type="text/css">
+    ul,
+    ol {
+        margin: 12px 0;
+        padding-left: 0px;
+    }
+
+    li,
+    ul {
+        list-style-type: none;
+    }
+
+    img {
+        border: 0;
+        border: none;
+        width: 100%;
+    }
+
+    a,
+    a:hover,
+    a:visited {
+        text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+        color: #333;
+    }
+
+    a {
+        color: #333;
+    }
+
+    .cl {
+        clear: both;
+    }
+
+    .fl {
+        float: left;
+    }
+
+    .fr {
+        float: right;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    section {
+        display: block;
+    }
+
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    .m-user-avatar>.avatarPic {
+        display: block;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border: 2px solid rgba(255, 255, 255, 0.95);
+        margin: 0 auto;
+        box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    }
+
+    .m-user-avatar>.avatarPic>img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .img-circle {
+        border-radius: 50%;
+    }
+
+
+    /*
+ * user 个人中心页
+ */
+
+    #user-b .j-nav .shopping-cart a {
+        background-position: -32px -225px;
+    }
+
+    .m-component-user {
+        background-color: #F1F1F1;
+        margin-bottom: 64px;
+    }
+
+    .m-user-avatar {
+        padding: 5px 0px;
+        color: #323232;
+    }
+
+    .head_list {
+        margin-bottom: 10px;
+        background-color: #fff;
+    }
+
+    .m-user-list {
+        overflow: hidden;
+        padding: 10px 0;
+    }
+
+    .m-user-list li {
+        float: left;
+        width: 50%;
+        text-align: center;
+    }
+
+    .m-user-list li span {
+        color: #EE9A00;
+    }
+
+    .m-user-list li span.bar {
+        float: left;
+        width: 1px;
+        height: 42px;
+        margin-top: 2px;
+        background-color: #89F0EB;
+        vertical-align: middle;
+    }
+
+    .m-user-content {
+        margin-bottom: 0px;
+    }
+
+    .m-user-content>li {
+        padding: 0px 10px;
+        margin-bottom: 10px;
+        background: #FFF none repeat scroll 0% 0%;
+    }
+
+    .m-user-content>li.m-user-footer {
+        text-align: center;
+        line-height: 35px;
+        margin: 0;
+        color: #999;
+    }
+
+    .m-user-item {
+        position: relative;
+        padding: 12px 0px;
+        border-bottom: 1px solid #F1F1F1;
+        font-size: 1em;
+        color: #323232;
+    }
+
+    .m-user-item>div,
+    .m-user-item>a {
+        position: relative;
+        display: block;
+        padding: 0px 0px 0px 30px;
+        color: #323232;
+        text-decoration: none;
+    }
+
+    .m-user-content>li .m-user-item:last-child {
+        border-bottom: medium none;
+    }
+
+    .m-user-item>div::before,
+    .m-user-item>a::before,
+    .m-user-item>a::after {
+        background-image: url("images/content-icon.png");
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 50%;
+        margin-top: -10px;
+        height: 25px;
+        content: "";
+        display: inline-block;
+    }
+
+    .m-user-item>div::before,
+    .m-user-item>a::before {
+        background-size: 365px 50px;
+        left: 0px;
+        width: 25px;
+    }
+
+    .m-user-item>a::after {
+        background-size: 365px 50px;
+        background-position: -340px -11px;
+        right: -5px;
+        width: 10px;
+    }
+
+    .user-order::before {
+        background-position: 1px -1px;
+    }
+
+    .user-site::before {
+        background-position: -54px -1px;
+    }
+
+    .user-set::before {
+        background-position: -82px -1px;
+    }
+
+    .user-score::before {
+        background-position: -26px -28px;
+    }
+
+    .user-coupon::before {
+        background-position: -26px -1px;
+    }
+
+    .m-user-item>a>span {
+        margin-right: 15px;
+        color: #EE9A00;
+    }
+
+    .m-user-item>div>span {
+        color: #EE9A00;
+    }
+</style>
+<div id="user-b">
+
+    <section class="m-component-user" id="m-user">
+        <div class="m-user-avatar text-center">
+            <span class="avatarPic">
+                <img style="display: inline;" class="lazy img-circle" src="images/user1-128x128.jpg">
+            </span>
+
+        </div>
+
+        <div class="head_list">
+            <ul class="m-user-list">
+                <li>
+                    <span class="bar"></span>
+                    <span>4</span>
+                    <br>我的消息</li>
+                <li>
+                    <span class="bar"></span>
+                    <span>2</span>
+                    <br>我的工单</li>
+            </ul>
+        </div>
+        <ul class="m-user-content">
+            <li>
+                <div class="m-user-item">
+                    <a href="#" class="user-coupon">我的工单</a>
+                </div>
+				<div class="m-user-item">
+                    <a href="#" class="user-set">设置</a>
+                </div>
+            </li>
+        </ul>
+    </section>
+</div>

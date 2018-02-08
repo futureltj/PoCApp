@@ -1,0 +1,22 @@
+<!--
+  Copyright (c) 2015, 2017, Oracle and/or its affiliates.
+  The Universal Permissive License (UPL), Version 1.0
+-->
+<div id='chart-container' style="padding:0px 0px 10px 10px;">
+<b class="sub_title_sty" data-bind="text:chartName"></b>
+<oj-chart  id="lineChart" class="chartStyle"
+           type="line"
+           series="[[seriesValue]]"
+           groups="[[groupsValue]]"
+           animation-on-display="auto"
+           animation-on-data-change="auto"
+           
+           y-axis.tick-label.scaling ="none"
+           hide-and-show-behavior="withRescale"
+           value-formats.value.scaling ="none"
+           value-formats.series.tooltip-label="[[serToolValue]]"
+           value-formats.value.tooltip-label="[[valToolValue]]"
+           value-formats.group.tooltip-label="[[groupToolValue]]"
+           style="max-width:500px;width:100%;height:350px;">
+</oj-chart>
+</div>

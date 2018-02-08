@@ -1,0 +1,95 @@
+@charset "UTF-8";
+.title{
+	height: 80px;
+	background-color:#dc5042 ;
+	color: white;
+	font-size: 24px;
+	text-align: center;
+	padding-top: 25px;
+}
+.banner{
+	padding: 0;
+	margin-top: 85px;
+}
+
+.menu{
+	background-color:#f9f9f9 ;
+	height: 60px;
+	width: 100%;
+}
+.line-left{
+	border-left: solid 1px #ede5da;
+}
+.line-right{
+	border-right: solid 1px #ede5da;
+}
+.line-bottom{
+	border-bottom: solid 1px #ede5da;
+}
+.icon-menu{
+	margin: 0;
+	text-align: center;
+	padding-top: 15px;
+	display:block;
+	width: 30%;
+}
+.text{
+	text-align: center;
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+.more{
+	margin-top:15%;
+	font-size: 20px;
+	text-align: center;
+}
+
+
+.login-bg{
+	background-image: url(../image/login-gb.png) ;
+	background-repeat: no-repeat;
+	background-size: 100% 500px;
+}
+.login-tx{
+	text-align: center !important;
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+.login-main{
+	text-align: center !important;
+}
+.input-style{
+	width: 100%;
+	border: none;
+	font-size: 18px;
+	padding-left: 85px;
+	padding-right: 85px;
+}
+.login-line{
+	border-bottom: 1px solid #bdbdbd;
+	margin-left:85px ;
+	margin-right: 85px;
+	margin-top: 15px;
+	margin-bottom: 20px;
+}
+.login-btn{
+	color: white;
+	background-color: #c63931 !important;
+	width: 100%;
+	font-size: 32px;
+}
+.btn:hover{
+	color: white;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+　　color:#c1c1c1;
+　　}
+　　:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+　　color:#c1c1c1;
+　　}
+　　::-moz-placeholder { /* Mozilla Firefox 19+ */
+　　color:#c1c1c1;
+　　}
+　　:-ms-input-placeholder { /* Internet Explorer 10+ */
+　　color:#c1c1c1;
+　　}

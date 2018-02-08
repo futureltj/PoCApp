@@ -1,0 +1,31 @@
+<div class="container" style="margin: 0;padding: 0;width: 100%;height:100vh;overflow:auto;">
+    <div class="oj-flex oj-flex-items-pad" style="margin-top: 15px;">
+        <div class="oj-sm-4 oj-flex-item">
+            <oj-button on-click='[[returnBtn]]'>
+                <span slot='endIcon' class="oj-fwk-icon oj-fwk-icon-next"></span>
+            </oj-button>
+        </div>
+    </div>
+    <div style="text-align: center;font-weight: bold;margin: 20px 0px;"><span data-bind="text:region"></span>--交易量统计</div>
+<!--    <oj-chart id="lineAreaChart"
+              type="lineWithArea"
+              series="[[areaSeriesValue]]"
+              groups="[[areaGroupsValue]]" 
+              animation-on-display="auto"
+              animation-on-data-change="auto"
+              orientation="[[orientationValue]]"
+              stack="[[stackValue]]"
+              hover-behavior="dim"
+              style="width:100%;height:350px;">
+    </oj-chart>-->
+    <oj-chart id="lineChart"
+              type="line"
+              series="[[lineSeriesValue]]"
+              groups="[[lineGroupsValue]]"
+              animation-on-display="auto"
+              animation-on-data-change="auto"
+              orientation="[[orientationValue]]"
+              hover-behavior="dim"
+              style="width:100%;height:350px;">
+    </oj-chart>
+</div>

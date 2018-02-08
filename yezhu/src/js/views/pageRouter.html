@@ -1,0 +1,111 @@
+<style type="text/css">
+    header {
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        color: white;
+        background-color: #EE9A00;
+        font-size: 18px;
+    }
+
+    .footer {
+        width: 100%;
+        height: 60px;
+        position: fixed;
+        bottom: 0px;
+        overflow: hidden;
+        background-color: #FFF;
+        border-top: medium none #ECEDED;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        margin: 0px;
+    }
+
+    .footer li {
+        float: left;
+        width: 25%;
+        text-align: center;
+        height: 100%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        border: none;
+        display: block;
+    }
+
+    .footer a {
+        color: #777;
+        font-size: 1rem;
+        text-decoration: none;
+    }
+
+    #user-b {
+        margin-bottom: 68px;
+    }
+
+    #user-b .footer a {
+        font-size: .875rem;
+    }
+
+    .footer .nav-controller {
+        position: relative;
+        height: 100%;
+        display: block;
+        font-size: 12px;
+    }
+
+    .fb-home,
+    .fb-group,
+    .fb-list,
+    .fb-user {
+        background-image: url("images/footer-icon.png");
+        background-repeat: no-repeat;
+        background-size: 30px auto;
+        height: 31px;
+        margin: -3px auto auto;
+        width: 30px;
+        background-position: 0px 4px;
+    }
+
+    .fb-home {
+        background-position: 0px -124px;
+    }
+
+    .fb-group {
+        background-position: 0px -156px;
+    }
+
+    .fb-list {
+        background-position: 0px -187px;
+    }
+
+    .fb-user {
+        background-position: 0px -218px;
+    }
+</style>
+<header data-bind="text:headerTitle"></header>
+<!--内容显示-->
+<div id="customers" data-bind="ojModule: moduleConfig"></div>
+<footer class="footer container-fluid">
+
+    <nav style="width:100%">
+        <ul style="width:100%">
+            <li>
+                <a href="#" data-bind="click:goCatalog">
+                    <div class="fb-home"></div>首页</a>
+            </li>
+            <li>
+                <a href="#" data-bind="click:goMaintain">
+                    <div class="fb-group"></div>维修</a>
+            </li>
+            <li>
+                <a href="#" data-bind="click:goNotification">
+                    <div class="fb-list"></div>消息</a>
+            </li>
+            <li>
+                <a href="#" data-bind="click:goPerson">
+                    <div class="fb-user"></div>我</a>
+            </li>
+        </ul>
+    </nav>
+</footer>

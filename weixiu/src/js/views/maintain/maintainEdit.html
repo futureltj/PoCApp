@@ -1,0 +1,35 @@
+ <div class="oj-flex row">
+                    <div class="oj-lg-4 oj-md-4 oj-sm-12">
+<span class="oj-label"><b style="font-size:15px">标题:</b> </span>
+<oj-input-text id="text-input" value="{{title}}"></oj-input-text>
+<span class="oj-label"><b style="font-size:15px">时间:</b> </span>
+<oj-input-date-time id="dateTime" value='{{datetime}}' converter=[[dateTimeConverter]]></oj-input-date-time>
+
+<span class="oj-label"><b style="font-size:15px">说明:</b> </span>
+<oj-input-text id="text-input" value="{{info}}"></oj-input-text>
+<br/>
+<span class="oj-label"><b style="font-size:15px">类型:</b> </span>
+<oj-select-one id="basicSelect" value="{{orderType}}">
+    <oj-option value="維修">維修</oj-option>
+    <oj-option value="維修">维护</oj-option>
+
+</oj-select-one>
+<br/>
+<oj-file-picker class='oj-filepicker-custom'
+                selectOn='click'
+                on-select='[[selectListener]]'>
+    <oj-button slot='trigger'>
+        <span slot='startIcon' class='oj-fwk-icon oj-fwk-icon-arrowbox-n'></span>
+        附件
+    </oj-button>
+</oj-file-picker>
+<br/>
+                    </div>
+ </div>
+ <div class="oj-sm-align-items-center">
+    <div role="presentation" data-bind="click:save" class="oj-flex-item icon-edit-sign">保存</div>
+    <br/>
+    <div role="presentation" data-bind="click:goback" class="oj-flex-item icon-edit-sign">返回</div>
+</div>
+<!--菜单 -->
+<div id="customers" data-bind="ojModule: menuConfig"></div>

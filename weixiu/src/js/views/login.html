@@ -1,0 +1,66 @@
+<style>
+        body {
+            
+            background-image: url('css/assets/images/login_01.png');
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        .portrait {
+            display: block;
+            width: 108px;
+            height: 108px;
+            border: 1px solid #EE9A00;
+            border-radius: 50%;
+            margin: 68px auto;
+            background-image: url('images/person.png');
+            background-size: 80px 80px;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        
+        form.login {
+            width: 290px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        form.login input {
+            border: none;
+            border-bottom: 1px solid #deddde;
+            margin-bottom: 17px;
+            outline: none;
+            padding: 17px 0;
+            font-size: 14px;
+        }
+        form.login input::-webkit-input-placeholder {
+            font-family: "Microsoft YaHei";
+            letter-spacing: 2px;
+        }
+
+        form.login button {
+            background-color: #EE9A00;
+            border: none;
+            padding: 11px 0;
+            outline: none;
+            color: white;
+            font-size: 16px;
+            letter-spacing: 2px;
+            border-radius: 5px;
+            font-family: "Microsoft YaHei";
+            line-height: 1;
+            margin-top: 16px;
+        }
+        
+    </style>
+
+
+ <i class="portrait"></i>
+    <form class="login">
+        <input type="text" style= "background-color:transparent " placeholder="用户名" data-bind="value:userName">
+        <input type="password" style= "background-color:transparent " placeholder="密码" data-bind="value:passWord">
+        <button data-bind="click:signIn">登录</button>
+    </form>

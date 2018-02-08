@@ -1,0 +1,71 @@
+<style>
+    ul,
+    ol {
+        margin: 12px 0;
+        padding-left: 0px;
+    }
+
+    .oj-datepicker-calendar td.oj-datepicker-today a.oj-selected,
+    .oj-datepicker-calendar td a.oj-selected {
+        background: #EE9A00;
+    }
+
+    .oj-timepicker-wheel-item {
+        color: #EE9A00;
+    }
+
+    .oj-timepicker-header a.oj-enabled,
+    .oj-timepicker-footer a.oj-enabled {
+        color: #EE9A00;
+    }
+
+    .oj-datepicker-header a.oj-enabled,
+    .oj-datepicker-buttonpane a.oj-enabled {
+        color: #EE9A00;
+    }
+
+    a a:visited a:active a:enabled {
+        color: #EE9A00;
+    }
+
+    .oj-datetimepicker-switcher a.oj-enabled {
+        color: #EE9A00;
+    }
+b{
+font-size:13px;
+font-weight:normal;
+}
+</style>
+
+<div id="mainDiv" style="overflow-y:auto; overflow-x:auto;height:550px;text-align:center;padding-top:40px;">
+<div class="row" style="padding-left:10px;padding-right:10px;">
+    <div class="oj-lg-6 oj-md-6 oj-sm-12" >
+        <oj-select-one style="width:100%" placeholder="报修分类" id="basicSelect" value="{{type}}">
+            <oj-option value="电维修">电维修</oj-option>
+            <oj-option value="水维修">水维修</oj-option>
+            <oj-option value="公共设施维修">公共设施维修</oj-option>
+        </oj-select-one>
+        <br/>
+		<br/>
+        <oj-input-text style="width:100%" placeholder="联系电话" id="text-input" value="{{attr4}}"></oj-input-text>
+        <br/>
+		<br/>
+        <oj-input-date-time style="width:100%" placeholder="接待时间" id="dateTime" value="{{servicetime}}" ></oj-input-date-time>
+		</br>
+		<br/>
+        <oj-text-area  placeholder="请输入问题描述，以便我们准确定位，及时处理(你还可以输入100字)" row="6" style="width:100%" id="text-area" value="{{content}}">
+        </oj-text-area>
+        <br/>
+		<br/>
+        <img src="images/photo.png" style="width:80px;height:80px;border:1px;" data-bind="click:takePicture" />
+        <img data-bind="attr: { src: imgsrc}" alt="" style="width:80px;height:80px" />
+		<img data-bind="attr: { src: imgsrc}" alt="" style="width:80px;height:80px" />
+        <br/>
+    </div>
+</div>
+<div style="align-content:center;width:100%;text-align:left;padding-top:30px;padding-bottom:60px">
+    <span style="padding-left:80px;"><img src="images/save.png" style="width:40px;height:40px" data-bind="click:upload" /></span>
+    <span class="pull-right" style="padding-right:100px;"><img src="images/return.png" style="width:40px;height:40px" data-bind="click:goback" /></span>
+	
+</div>
+</div>

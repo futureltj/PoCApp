@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!--
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+-->
+
+<!-- ************************ IMPORTANT INFORMATION ************************************
+  This hybrid navigation drawer template is provided as an example of how to configure
+  a JET hybrid mobile application with a navigation drawer as a single page application
+  using ojRouter and ojModule.  It contains the Oracle JET framework and a default
+  requireJS configuration file to show how JET can be setup in a common application.
+  This project template can be used in conjunction with demo code from the JET
+  website to test JET component behavior and interactions.
+
+  Any CSS styling with the prefix "demo-" is for demonstration only and is not
+  provided as part of the JET framework.
+
+  Please see the demos under Cookbook/Patterns/App Shell: Hybrid Mobile and the CSS documentation
+  under Support/API Docs/Non-Component Styling on the JET website for more information on how to use 
+  the best practice patterns shown in this template.
+
+  Aria Landmark role attributes are added to the different sections of the application
+  for accessibility compliance. If you change the type of content for a specific
+  section from what is defined, you should also change the role value for that
+  section to represent the appropriate content type.
+  ***************************** IMPORTANT INFORMATION ************************************ -->
+<html lang="zh">
+    <head>
+        <title>MCS Test</title>
+        <meta charset="UTF-8">
+        <meta id="token" content=""/>
+        <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src * data:">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        <link rel="icon" href="css/images/favicon.ico" type="image/x-icon" />
+
+        <!-- This is the main css file for the default Alta theme -->
+        <!-- injector:theme -->
+        <!-- endinjector -->
+        <!-- This contains icon fonts used by the starter template -->
+        <link rel="stylesheet" href="css/demo-alta-site-min.css" type="text/css"/>
+
+        <!-- This is where you would add any app specific styling -->
+        <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/app.css" type="text/css"/>
+        <link rel="stylesheet" href="css/oj-alta-min.css" type="text/css"/>
+        
+        <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Microsoft YaHei';
+            font-size: 14px;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: white;
+            background-color: #d43b33;
+            font-size: 15px;
+        }
+        #main-box .banner {
+            height: 110px;
+        }
+        #main-box .banner img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        #main-box .module-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #main-box .module-list:after {
+            display: block;
+            content: '';
+            clear: both;
+        }
+        #main-box .module-list li {
+            float: left;
+            width: 33.33%;
+            border: 1px solid #babfc2;
+            border-top: none;
+            border-left: none;
+            height: 95px;
+        }
+        #main-box .module-list li:nth-child(3n) {
+            border-right: none;
+        }
+        #main-box .module-list li a.module {
+            display: block;
+            height: 100%;
+        }
+        #main-box .module-list li a,
+        #main-box .module-list li a:active,
+        #main-box .module-list li a:hover,
+        #main-box .module-list li a:focus {
+            text-decoration: none;
+        }
+        #main-box .module-list li a.module:before,
+        #main-box .module-list li a.module:after {
+            display: block;
+            content: '';
+            font-size: 12px;
+            color: #161d1d;
+            text-align: center;
+        }
+        #main-box .module-list li a.module:before {
+            height: 70px;
+            background-repeat: no-repeat;
+            background-position: center 8px;
+            margin-bottom: 5px;
+            background-size: 90px 65px;
+        }
+        #main-box .module-list li a.module.m1:before {
+            background-image: url('css/assets/images/Tools.png');
+        }
+        #main-box .module-list li a.module.m2:before {
+            background-image: url('css/assets/images/Tools.png');
+        }
+        #main-box .module-list li a.module.m3:before {
+            background-image: url('css/assets/images/Tools.png');
+        }
+        #main-box .module-list li a.module.m4:before {
+            background-image: url('css/assets/images/Tools.png');
+        }
+        #main-box .module-list li a.module.m5:before {
+            background-image: url('css/assets/images/Tools.png');
+        }
+        #main-box .module-list li a.module.m6:before {
+            background-image: url('css/assets/images/Tools.png');
+        }
+        #main-box .module-list li a.module.m7:before {
+            background-image: url('css/assets/images/Tools.png');
+        }
+        #main-box .module-list li a.module.m8:before {
+            background-image: url('css/assets/images/Tools.png');
+        }
+        
+        #main-box .module-list li a.module.m1:after {
+            content: '维修订单1';
+        }
+        #main-box .module-list li a.module.m2:after {
+            content: '维修订单2';
+        }
+        #main-box .module-list li a.module.m3:after {
+            content: '维修订单3';
+        }
+        #main-box .module-list li a.module.m4:after {
+            content: '维修订单4';
+        }
+        #main-box .module-list li a.module.m5:after {
+            content: '维修订单5';
+        }
+        #main-box .module-list li a.module.m6:after {
+            content: '维修订单6';
+        }
+        #main-box .module-list li a.module.m7:after {
+            content: '维修订单7';
+        }
+        #main-box .module-list li a.module.m8:after {
+            content: '维修订单8';
+        }
+        #main-box .module-list li:last-child:empty {
+            text-align: center;
+        }
+        #main-box .module-list li:last-child:empty:before {
+            content: '敬 请期 待';
+            display: inline-block;
+            width: 40px;
+            margin-top: 25px;
+            color: #8f9192;
+        }
+        
+        
+        footer {
+            display: flex;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        footer > div {
+            height: 50px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #8f9192;
+            font-size: 12px;
+        }
+        footer > div i {
+            font-size: 20px;
+        }
+        footer > div.active {
+            color: #d43b33;
+        }
+    </style>
+    </head>
+    <body>
+        <!-- 系统显示模版 -->
+        <script type="text/html" id="navTemplate">
+        <li><a href="#">
+                <span data-bind="css: $data['iconClass']"></span>
+                <!-- ko text: $data['name'] --> <!--/ko-->
+            </a></li>
+        </script>
+        <div> <input id="token" type="hidden" /></div>
+        <div id="globalBody" class="oj-offcanvas-outer-wrapper oj-offcanvas-page">
+            <div id="pageContent" >
+                <!--
+                    内容显示区域
+                    ojModule: router.moduleConfig 固定写法
+                -->
+                <div data-bind="ojModule: router.moduleConfig"></div>
+            </div>
+        </div>
+
+    <script type="text/javascript" src="js/libs/require/require.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+</body>
+
+</html>

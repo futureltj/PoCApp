@@ -1,0 +1,19 @@
+{
+  "seriesTooltip": "",
+  "valueTooltip": "数量",
+  "groupTooltip": "类型",
+  "dataArr": [
+    {
+      "name": "新分配的工单",
+      "items": [10]
+    },
+    {
+      "name": "已处理的工单",
+      "items": [4]
+    },
+    {
+      "name": "正在处理工单",
+      "items": [6]
+    }
+  ]
+}

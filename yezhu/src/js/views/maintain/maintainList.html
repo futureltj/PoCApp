@@ -1,0 +1,539 @@
+<style>
+  ul,
+  ol {
+    margin: 12px 0;
+    padding-left: 0px;
+  }
+
+  #star {
+    position: relative;
+    width: 100%;
+    margin: 10px auto;
+  }
+
+  #star ul,
+  #star span {
+    float: left;
+    display: inline;
+    height: 26px;
+    line-height: 26px;
+  }
+
+  #star ul {
+    margin: 0 10px;
+  }
+
+  #star li {
+    float: left;
+    width: 40px;
+    cursor: pointer;
+    text-indent: -9999px;
+    background: url(images/star.png) no-repeat;
+    list-style-type: none
+  }
+
+  #star strong {
+    color: #f60;
+    padding-left: 10px;
+  }
+
+  #star li.on {
+    background-position: 0 -28px;
+    list-style-type: none
+  }
+
+  #star p {
+    position: absolute;
+    top: 20px;
+    width: 159px;
+    height: 60px;
+    display: none;
+    background: url(images/icon.gif) no-repeat;
+    padding: 7px 10px 0;
+  }
+
+  #star p em {
+    color: #f60;
+    display: block;
+    font-style: normal;
+  }
+
+  .content-wrapper,
+  .main-footer {
+    -webkit-transition: -webkit-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+    -moz-transition: -moz-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+    -o-transition: -o-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+    margin-left: 230px;
+    z-index: 820;
+  }
+
+  .layout-top-nav .content-wrapper,
+  .layout-top-nav .main-footer {
+    margin-left: 0;
+  }
+
+  @media (max-width: 767px) {
+    .content-wrapper {
+      margin-left: 0;
+    }
+  }
+
+  .content-wrapper {
+    min-height: 100%;
+    background-color: #ecf0f5;
+    z-index: 800;
+  }
+
+  .content {
+    min-height: 250px;
+    padding: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .h4 {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  /* General Links */
+
+  a {
+    color: #3c8dbc;
+  }
+
+  a:hover,
+  a:active,
+  a:focus {
+    outline: none;
+    text-decoration: none;
+    color: #72afd2;
+  }
+
+  /*
+ * Component: Timeline
+ * -------------------
+ */
+
+  .timeline {
+    position: relative;
+    margin: 0 0 30px 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #ddd;
+    left: 31px;
+    margin: 0;
+    border-radius: 2px;
+  }
+
+  .timeline>li {
+    position: relative;
+    margin-right: 10px;
+    margin-bottom: 15px;
+  }
+
+  .timeline>li:before,
+  .timeline>li:after {
+    content: " ";
+    display: table;
+  }
+
+  .timeline>li:after {
+    clear: both;
+  }
+
+  .timeline>li>.timeline-item {
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    margin-top: 0;
+    background: #fff;
+    color: #444;
+    margin-left: 60px;
+    margin-right: 15px;
+    padding: 0;
+    position: relative;
+  }
+
+  .timeline>li>.timeline-item>.time {
+    color: #999;
+    float: right;
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .timeline>li>.timeline-item>.timeline-header {
+    margin: 0;
+    color: #555;
+    border-bottom: 1px solid #f4f4f4;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.1;
+  }
+
+  .timeline>li>.timeline-item>.timeline-header>a {
+    font-weight: 600;
+  }
+
+  .timeline>li>.timeline-item>.timeline-body,
+  .timeline>li>.timeline-item>.timeline-footer {
+    padding: 10px;
+  }
+
+  .timeline>li>.fa,
+  .timeline>li>.glyphicon,
+  .timeline>li>.ion {
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    line-height: 30px;
+    position: absolute;
+    color: #666;
+    background: #d2d6de;
+    border-radius: 50%;
+    text-align: center;
+    left: 18px;
+    top: 0;
+  }
+
+  .timeline>.time-label>span {
+    font-weight: 600;
+    padding: 5px;
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 4px;
+  }
+
+  .timeline-inverse>li>.timeline-item {
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .timeline-inverse>li>.timeline-item>.timeline-header {
+    border-bottom-color: #ddd;
+  }
+
+  .bg-yellow,
+  .bg-aqua,
+  .bg-green,
+  .bg-olive,
+  .bg-orange,
+  .bg-purple,
+  .bg-maroon {
+    color: #fff !important;
+  }
+
+  .bg-yellow {
+    background-color: #f39c12 !important;
+  }
+
+  .bg-aqua {
+    background-color: #00c0ef !important;
+  }
+
+  .bg-green {
+    background-color: #00a65a !important;
+  }
+
+  .bg-olive {
+    background-color: #3d9970 !important;
+  }
+
+  .bg-orange {
+    background-color: #ff851b !important;
+  }
+
+  .bg-fuchsia {
+    background-color: #f012be !important;
+  }
+
+  .bg-purple {
+    background-color: #605ca8 !important;
+  }
+
+  .bg-maroon {
+    background-color: #d81b60 !important;
+  }
+
+  .font-light {
+    font-weight: 300;
+  }
+
+  .img-sm,
+  .img-md,
+  .img-lg {
+    margin: 6px;
+    float: center;
+  }
+
+  .img-sm {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .img-sm+.img-push {
+    margin-left: 40px;
+  }
+
+  .img-md {
+    width: 60px;
+    height: 60px;
+  }
+
+  .img-md+.img-push {
+    margin-left: 70px;
+  }
+
+  .img-lg {
+    width: 100px;
+    height: 100px;
+  }
+
+  .img-lg+.img-push {
+    margin-left: 110px;
+  }
+
+  .img-bordered {
+    border: 3px solid #d2d6de;
+    padding: 3px;
+  }
+
+  .img-bordered-sm {
+    border: 2px solid #d2d6de;
+    padding: 2px;
+  }
+
+  .shadow {
+    margin: 2px;
+    -webkit-box-shadow: #666 0px 0px 2px;
+    -moz-box-shadow: #666 0px 0px 2px;
+    box-shadow: #666 0px 0px 2px;
+    background: #FFF;
+  }
+</style>
+<div id="listviewwrapper" style="padding-bottom:100px;overflow:auto;">
+
+  <oj-list-view id="listview" aria-label="list with context menu" selection="{{selectedItem}}" on-selection-changed="[[handleSelectionChanged]]"
+    data="[[dataProvider]]" item.renderer="[[oj.KnockoutTemplateUtils.getRenderer('server_template', true)]]" selection-mode="single">
+
+  </oj-list-view>
+  <div class="oj-flex-bar-end" style="padding-top:20px;padding-right:40px;padding-bottom:40px;overflow:auto;">
+    <img src="images/add.png" class="oj-flex-bar-end" style="width:40px;height:40px" data-bind="click:addBtn" />
+  </div>
+</div>
+
+<script type="text/html" id="server_template">
+    <li>
+        <div class="oj-flex row shadow">
+            <div  class="oj-sm-4 col">
+            <img data-bind="attr:{src: attr5}" width="100px" height="100px" style="padding-top:5px;padding-left:5px" />
+              </div>
+              <div class="oj-sm-8 col">
+                  <div class="oj-flex row">
+                      <div class="oj-sm-7 col col"><span style="color:blue;font-size:12px"  data-bind="text: type"></span></div>
+                      <div class="oj-sm-5 col col"><span style="color: #fff;background-color:#00c0ef;font-size:12px" data-bind="text: status"></span></div>
+                  </div>
+                  <div class="oj-flex row">
+                        <span style="color:gray" data-bind="text: content"></span>
+                    </div>
+                    <div class="oj-flex row">
+                            <div class="oj-sm-7 col col">
+                                    <div class="oj-flex row"><i class="fa fa-clock-o"></i><span  data-bind="text: servicetime"></span></div>
+                                    <div class="oj-flex row"><i class="fa fa-phone"></i><span  data-bind="text: attr4"></span></div>
+                            </div>
+                            <div class="oj-sm-5 col col">
+                                <img src="images/history.png" style="width:30px;height:30px" data-bind="click:historyBtn" />
+                                  &nbsp;&nbsp;&nbsp;&nbsp;
+                                <img src="images/pingjia.png" style="width:30px;height:30px" data-bind="{style: { display: (status==='待评价'||status==='已评价')? '' : 'none' },click:editBtn}"/>
+                            </div>
+                            <div class="oj-flex row">
+                                <span class="data"><b>评价: </b><span data-bind="style: { display: attr1===''? '' : 'none' }"></span></span>
+                                <img src="images/star1.png" data-bind="style: { display: attr1==='1'? '' : 'none' }"/>
+                                <img src="images/star2.png" data-bind="style: { display: attr1==='2'? '' : 'none' }"/>
+                                <img src="images/star3.png" data-bind="style: { display: attr1==='3'? '' : 'none' }"/>
+                                <img src="images/star4.png" data-bind="style: { display: attr1==='4'? '' : 'none' }"/>
+                                <img src="images/star5.png" data-bind="style: { display: attr1==='5'? '' : 'none' }"/>
+                            </span>
+                                </div>
+                        </div>
+                        
+            </div>
+        </div>
+    </li>
+</script>
+
+<oj-popup class="demo-popup" id="popup1" style="width:100%" tail="none" position.my.horizontal="center" position.my.vertical="center"
+  position.at.horizontal="center" position.at.vertical="center" position.of="window" position.offset.y="10" modality="modal">
+  <div class="demo-popup-body" style="width:100%">
+    <div class="demo-popup-header">
+      <h5>请对维修服务做出评价</h5>
+    </div>
+    <div id="star" style="width:100%">
+      <span></span>
+      <ul style="width:100%">
+        <li>
+          <a href="javascript:;">1</a>
+        </li>
+        <li>
+          <a href="javascript:;">2</a>
+        </li>
+        <li>
+          <a href="javascript:;">3</a>
+        </li>
+        <li>
+          <a href="javascript:;">4</a>
+        </li>
+        <li>
+          <a href="javascript:;">5</a>
+        </li>
+      </ul>
+      <span></span>
+      <p></p>
+    </div>
+    <br/>
+    <br/>
+    <div style="align-content:center;width:100%;text-align:center;padding-top:30px">
+      <img src="images/save.png" style="width:40px;height:40px" data-bind="click:feedback" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <img src="images/cancle.png" style="width:40px;height:40px" data-bind="click:closePopup" />
+    </div>
+  </div>
+</oj-popup>
+<oj-popup class="demo-popup" id="popup2" style="width:100%" tail="none" position.my.horizontal="center" position.my.vertical="center"
+  position.at.horizontal="center" position.at.vertical="center" position.of="window" position.offset.y="10" modality="modal">
+  <div class="demo-popup-body" style="width:100%">
+    <div class="content-wrapper" style="padding-bottom:100px;height:370px;overflow:auto;">
+
+      <!-- Main content -->
+      <section class="content">
+
+        <!-- row -->
+        <div class="row">
+          <div class="col-md-12">
+            <!-- The time line -->
+            <ul class="timeline">
+              <!-- timeline time label -->
+              <li class="time-label">
+                <span class="bg-olive">
+                  2018.2.6
+                </span>
+              </li>
+              <!-- /.timeline-label -->
+              <!-- timeline item -->
+              <li>
+                <i class="fa fa-comments bg-orange"></i>
+
+                <div class="timeline-item">
+                  <span class="time">
+                    <i class="fa fa-clock-o"></i>10:05</span>
+
+                  <h3 class="timeline-header">
+                    <a href="#">已评价</a>
+                  </h3>
+
+                  <div class="timeline-body">
+                    钟师傅已经完成维修，请确认并进行评价
+                  </div>
+                </div>
+              </li>
+              <!-- timeline time label -->
+              <li class="time-label">
+                <span class="bg-maroon">
+                  2018.2.4
+                </span>
+              </li>
+              <!-- /.timeline-label -->
+              <!-- timeline item -->
+              <li>
+                <i class="fa fa-comments bg-yellow"></i>
+
+                <div class="timeline-item">
+                  <span class="time">
+                    <i class="fa fa-clock-o"></i>12:05</span>
+
+                  <h3 class="timeline-header">
+                    <a href="#">已经完成维修</a>
+                  </h3>
+
+                  <div class="timeline-body">
+                    钟师傅已经完成维修，请确认并进行评价
+                  </div>
+                </div>
+              </li>
+              <!-- END timeline item -->
+              <!-- timeline item -->
+              <li>
+                <i class="fa fa-user bg-aqua"></i>
+
+                <div class="timeline-item">
+                  <span class="time">
+                    <i class="fa fa-clock-o"></i>1天前</span>
+                  <div class="timeline-body">
+                    已安排钟师傅为你维修
+                  </div>
+                </div>
+              </li>
+              <!-- END timeline item -->
+              <!-- timeline item -->
+              <!-- END timeline item -->
+              <!-- timeline time label -->
+              <li class="time-label">
+                <span class="bg-aqua">
+                  2018.2.2
+                </span>
+              </li>
+              <!-- /.timeline-label -->
+              <!-- timeline item -->
+              <li>
+                <i class="fa fa-camera bg-purple"></i>
+
+                <div class="timeline-item">
+                  <span class="time">
+                    <i class="fa fa-clock-o"></i>2天前</span>
+
+                  <h3 class="timeline-header">
+                    <a href="#">申请报修</a>
+                  </h3>
+
+                  <div class="timeline-body">
+                    <img src="images/placeholder.png" alt="..." class="img-lg">
+                  </div>
+                </div>
+              </li>
+              <!-- END timeline item -->
+              <!-- timeline item -->
+
+              <!-- END timeline item -->
+              <li>
+                <i class="fa fa-clock-o bg-gray"></i>
+              </li>
+            </ul>
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+      </section>
+      <!-- /.content -->
+    </div>
+    <div style="align-content:center;width:100%;text-align:center;padding-top:30px">
+
+      <img src="images/cancle.png" style="width:40px;height:40px" data-bind="click:closePopup2" />
+    </div>
+  </div>
+</oj-popup>
+<!--菜单 -->
+<!--
+<div id="customers" data-bind="ojModule: menuConfig"></div>
+-->

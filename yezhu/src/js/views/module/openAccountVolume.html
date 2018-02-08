@@ -1,0 +1,59 @@
+<div class="container" style="margin: 0;padding: 0;width: 100%;">
+    <div style="height: 100vh;">
+        <div class="oj-flex oj-flex-items-pad" style="margin-top: 15px;">
+            <div class="oj-sm-7 oj-flex-item">
+                <oj-button on-click='[[returnBtn]]'>
+                    <span slot='endIcon' class="oj-fwk-icon oj-fwk-icon-next"></span>
+                </oj-button>
+            </div>
+            <div class="oj-sm-5 oj-flex-item">
+                <oj-select-one id="basicSelectss1" value="{{valmonth}}" on-value-changed="[[valueChangedMonth]]" style="min-width: 100px;">
+                    <oj-option value="201801">2018年 01月</oj-option>
+                    <oj-option value="201712">2017年 12月</oj-option>                
+                    <oj-option value="201711">2017年 11月</oj-option>
+                    <oj-option value="201710">2017年 10月</oj-option>
+                    <oj-option value="201709">2017年 09月</oj-option>
+                    <oj-option value="201708">2017年 08月</oj-option>
+                    <oj-option value="201707">2017年 07月</oj-option>
+                </oj-select-one>
+            </div>
+        </div>
+        
+        <div class="oj-flex oj-flex-items-pad" style="text-align: center;font-size: 14px;padding-top: 4px;">
+            <div class="oj-sm-5.5 oj-flex-item" style="max-width: 45%;text-align: center;font-size: 14px;padding-top: 4px;margin-left: 5px; border: 1px #c4c5c6 solid;">
+                <header style='height: 34px;margin:-3px -10px;'>开户数</header>
+                <div style="padding-top: 8px;">
+                   <span data-bind="text:total"></span>  
+                </div>
+            </div>
+            <div class="oj-sm-1 oj-flex-item" style="max-width: 45%;text-align: center;font-size: 14px;padding-top: 4px;">
+
+            </div>
+            <div class="oj-sm-5.5 oj-flex-item" style="text-align: center;font-size: 14px;padding-top: 4px;margin-right: 5px;border: 1px #c4c5c6 solid;">
+                <header style='height: 34px;margin:-3px -10px;'>较上期</header>
+                <div style="padding-top: 8px;">
+                    涨幅：<span data-bind="text:growthRate"></span>&#37;
+                </div>
+            </div>
+
+        </div>
+
+        
+        <!--<div class="oj-sm-12 oj-flex-item tf-char-Title" style="text-align: center;font-weight: bold;margin: 10px 0px;">板块统计</div>
+      -->
+        <oj-chart id="barChart"
+                  type="bar" 
+                  orientation="[[orientationValue]]"
+                  stack="[[stackValue]]"
+                  series="[[barSeriesValue]]"
+                  groups="[[barGroupsValue]]" 
+                  animation-on-display="auto"
+                  animation-on-data-change="auto"
+                  hover-behavior="dim"
+                  drilling="{{drillingValue}}"
+                   legend.position="bottom"
+                  on-oj-drill="[[effectValue]]"
+                  style="max-width:100%;width:100%;height:350px;">
+        </oj-chart>
+    </div>
+</div>

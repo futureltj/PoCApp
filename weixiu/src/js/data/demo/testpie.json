@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Series 1",
+        "items": [
+            42
+        ]
+    },
+    {
+        "name": "Series 2",
+        "items": [
+            55
+        ]
+    },
+    {
+        "name": "Series 3",
+        "items": [
+            36
+        ]
+    },
+    {
+        "name": "Series 4",
+        "items": [
+            10
+        ]
+    },
+    {
+        "name": "Series 5",
+        "items": [
+            5
+        ]
+    }
+]
